@@ -108,7 +108,18 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Signing in on Web</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="html">
+&lt;span id="signinButton">
+  &lt;span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="CLIENT_ID"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  &lt;/span>
+&lt;/span>
+</pre>
     </article>
   </slide>
 
@@ -117,7 +128,12 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Signing in on Android: add to layout</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="xml">
+&lt;com.google.android.gms.common.SignInButton
+    android:id="@+id/sign_in_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</pre>
     </article>
   </slide>
 
@@ -126,7 +142,15 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Signing in on Android: initialize PlusClient</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="java">
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    mPlusClient = new PlusClient.Builder(this, this, this)
+      .setVisibleActivities("http://schemas.google.com/AddActivity")
+      .build();
+}
+</pre>
     </article>
   </slide>
 
@@ -135,7 +159,13 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Signing in on Android: you have a user!</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="java">
+@Override
+public void onConnected(Bundle connectionHint) {
+    mConnectionProgressDialog.dismiss();
+    Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
+}
+</pre>
     </article>
   </slide>
 
@@ -170,7 +200,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>One-step download to an Android device</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+
     </article>
   </slide>
 
@@ -196,7 +226,19 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Enable Over-The-Air Installs</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="html">
+&lt;span id="signinButton">
+  &lt;span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="CLIENT_ID"
+    <b>data-apppackagename="com.google.android.apps.plus"</b>
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  &lt;/span>
+&lt;/span>
+</pre>
     </article>
   </slide>
 
@@ -239,7 +281,14 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Customization on Web</h2>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+<pre class="prettyprint" data-lang="javascript">
+var request = gapi.client.plus.people.get({
+  'userid': me
+});
+request.execute(function(resp) {
+  console.log('Retrieved profile:' + resp);
+});
+</pre>
     </article>
   </slide>
 
@@ -303,7 +352,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h3>Web, Android, iOS</h3>
     </hgroup>
   </slide>
-  
+
   <slide>
     <hgroup>
       <h2>Creating Interactive Post on Web</h2>
