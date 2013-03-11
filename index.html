@@ -44,18 +44,17 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>Today's Agenda</h2>
     </hgroup>
     <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
+      <ul class="build">
+        <li>Google+ Sign-In button</li>
+        <li>Over-the-Air Installs</li>
+        <li>App Customization</li>
+        <li>Interactive Posts</li>
+        <li>App Activities</li>
+        <li>Server-Side calls</li>
+        <li>Platform Insights</li>
       </ul>
     </article>
   </slide>
@@ -63,49 +62,15 @@ URL: https://code.google.com/p/io-2012-slides
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Google+ Sign-In</h2>
+      <h2>Google+ Sign-In button</h2>
       <h3>Simplified sign-in from a trusted source</h3>
     </hgroup>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Simplicity and security come first</h2>
-    </hgroup>
-    <article>
-      <p>If you sign in to Gmail, YouTube or any other Google service, you can now use your existing credentials to sign in to apps outside of Google. Just review the Google+ permissions screen (outlining the data you're sharing with the app, and the people who can see your activity), and you're all set. Google+ Sign-In also comes with the protections and safeguards you’ve come to expect from your Google account (like 2-step verification), so you can always sign in with confidence.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Works with your exisiting sign in systems</h2>
-    </hgroup>
-    <article>
-      <!-- graphic of database table -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Give users choice</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>How to: "Sign-In with Google" button</h2>
-      <h3>Web, Android, iOS</h3>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Signing in on Web</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>The HTML</h3>
     </hgroup>
     <article>
 <pre class="prettyprint" data-lang="html">
@@ -125,65 +90,71 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Signing in on Android: add to layout</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>http://developers.google.com/+</h3>
     </hgroup>
-    <article>
-<pre class="prettyprint" data-lang="xml">
-&lt;com.google.android.gms.common.SignInButton
-    android:id="@+id/sign_in_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-</pre>
+    <article class="flexbox vcenter">
+      <img src="images/devsite.png" height="400" alt="Devsite" title="Devsite">
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Signing in on Android: initialize PlusClient</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>Configure Application in the API Console</h3>
     </hgroup>
-    <article>
-<pre class="prettyprint" data-lang="java">
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    mPlusClient = new PlusClient.Builder(this, this, this)
-      .setVisibleActivities("http://schemas.google.com/AddActivity")
-      .build();
-}
-</pre>
+    <article class="flexbox vcenter">
+      <img src="images/console2.png" width="960" alt="The API console" title="The API console">
+      <footer class="source">http://developers.google.com/console</footer>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Signing in on Android: you have a user!</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>The JS</h3>
     </hgroup>
     <article>
-<pre class="prettyprint" data-lang="java">
-@Override
-public void onConnected(Bundle connectionHint) {
-    mConnectionProgressDialog.dismiss();
-    Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
-}
-</pre>
+      <p></p>
+      <pre class="prettyprint" data-lang="javascript">
+&lt;script type="text/javascript"&gt;
+  (function() {
+   var po = document.createElement('script'); 
+   po.type = 'text/javascript'; po.async = true;
+   po.src = 'https://apis.google.com/js/client:plusone.js';
+   var s = document.getElementsByTagName('script')[0];
+   s.parentNode.insertBefore(po, s);
+  })();
+&lt;/script&gt;
+      </pre>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Signing in on iOS: TODO</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>The Consent Dialogue</h3>
     </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
+    <article class="flexbox vcenter">
+      <img src="images/consent.png" height="496" alt="The Consent Dialogue" title="The Consent Dialogue">
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Signing in on iOS: TODO</h2>
+      <h2>Google+ Sign-In button</h2>
+      <h3>Handling the callback</h3>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+      <p></p>
+      <pre class="prettyprint" data-lang="javascript">
+function signinCallback(authResult) {
+  if (authResult['access_token']) {
+    console.log("Signed in!");
+  } else if (authResult['error']) {
+    console.log(authResult['error']);
+  }
+}     </pre>
     </article>
   </slide>
 
@@ -197,33 +168,18 @@ public void onConnected(Bundle connectionHint) {
 
   <slide>
     <hgroup>
-      <h2>One-step download to an Android device</h2>
+      <h2>Android downloads from your site</h2>
     </hgroup>
-    <article>
-
+    <article class="flexbox vcenter">
+      <img src="images/tunein-ota.png" alt="" height="496">
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Make mobile registration easier</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>How to: enable Over-The-Air Installs</h2>
-      <h3>Web</h3>
-    </hgroup>
-  </slide>
 
   <slide>
     <hgroup>
-      <h2>Enable Over-The-Air Installs</h2>
+      <h2>Over-The-Air Installs</h2>
+      <h3>Just add a package name</h3>
     </hgroup>
     <article>
 <pre class="prettyprint" data-lang="html">
@@ -292,24 +248,6 @@ request.execute(function(resp) {
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Customization on Android</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Customization on iOS</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
@@ -362,24 +300,6 @@ request.execute(function(resp) {
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Creating Interactive Post on Android</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Creating Interactive Post on iOS</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
@@ -408,42 +328,6 @@ request.execute(function(resp) {
   <slide>
     <hgroup>
       <h2>Writing App Activities on Web</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Writing App Activities on Android</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Writing App Activities on Android</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Writing App Activities on iOS</h2>
-    </hgroup>
-    <article>
-      <!-- multi-auth screenshot -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Writing App Activities on iOS</h2>
     </hgroup>
     <article>
       <!-- multi-auth screenshot -->
