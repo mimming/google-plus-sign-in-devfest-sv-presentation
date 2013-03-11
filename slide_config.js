@@ -21,9 +21,9 @@ var SLIDE_CONFIG = {
   presenters: [{
     name: 'Jonathan Beri',
     company: 'Developer Advocate, Google+',
-    gplus: 'http://www.google.com/+JonathanBeri',
-    www: 'http://www.jonathanberi.com',
-    github: 'http://github.com/beriberikix'
+    gplus: 'http://plus.google.com/+GooglePlusDevelopers',
+    www: 'http://developers.google.com/+',
+    github: 'http://github.com/googleplus'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
