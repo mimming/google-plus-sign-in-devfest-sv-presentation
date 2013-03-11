@@ -175,7 +175,6 @@ function signinCallback(authResult) {
     </article>
   </slide>
 
-
   <slide>
     <hgroup>
       <h2>Over-The-Air Installs</h2>
@@ -224,27 +223,42 @@ function signinCallback(authResult) {
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>How to: add personalization</h2>
-      <h3>Web, Android, iOS</h3>
-    </hgroup>
-  </slide>
-
   <slide>
     <hgroup>
-      <h2>Customization on Web</h2>
+      <h2>App Customization</h2>
+      <h3>My profile</h3>
     </hgroup>
     <article>
-<pre class="prettyprint" data-lang="javascript">
-var request = gapi.client.plus.people.get({
-  'userid': me
+      <p></p>
+      <pre class="prettyprint" data-lang="javascript">
+gapi.client.load('plus','v1', function(){
+  var request = gapi.client.plus.people.get({
+    <b>'userId': "me"</b>
+  });
+  request.execute(function(resp) {
+    console.log('Retrieved profile:' + resp.displayName);
+  });
 });
-request.execute(function(resp) {
-  console.log('Retrieved profile:' + resp);
+      </pre>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>App Customization</h2>
+      <h3>Getting people in my circles</h3>
+    </hgroup>
+    <article>
+      <p></p>
+      <pre class="prettyprint" data-lang="javascript">
+var friends = gapi.client.plus.people.list({
+  'userId': "me",
+  'collection': "visible"
 });
-</pre>
+friends.execute(function(resp) {
+  console.log('Num people visible:' + resp.totalItems);
+});        
+      </pre>
     </article>
   </slide>
 
@@ -283,20 +297,49 @@ request.execute(function(resp) {
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>How to: create Interactive Post</h2>
-      <h3>Web, Android, iOS</h3>
+  <slide>
+    <hgroup>
+      <h2>Interactive Posts</h2>
+      <h3>Call To Action & Deep Link</h3>
     </hgroup>
+    <article>
+      <p></p>
+      <pre class="prettyprint" data-lang="html">
+&lt;button class="g-interactivepost"
+  data-callback="signinCallback"
+  data-clientid="YOUR_CLIENT_ID"
+  data-cookiepolicy="single_host_origin"
+  data-requestvisibleactions=
+    "http://schemas.google.com/DiscoverActivity"
+  <b>data-calltoactionlabel="CREATE"
+  data-calltoactionurl="http://plus.google.com/pages/create"
+  data-calltoactiondeeplinkid="/pages/create"</b>&gt;
+  Share!
+&lt;/button&gt;</pre>
+    </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Creating Interactive Post on Web</h2>
+      <h2>Interactive Posts</h2>
+      <h3>Prefilling</h3>
     </hgroup>
     <article>
-      <!-- multi-auth screenshot -->
+      <p></p>
+      <pre class="prettyprint" data-lang="html">
+&lt;button class="g-interactivepost"
+  data-callback="signinCallback"
+  data-clientid="YOUR_CLIENT_ID"
+  data-cookiepolicy="single_host_origin"
+  data-requestvisibleactions=
+    "http://schemas.google.com/DiscoverActivity"
+  <b>data-prefilltext="Create a Google+ page for your business."
+  data-recipients="110967630299632321627,leeroy.jenkins@example.com"</b>
+  data-calltoactionlabel="CREATE"
+  data-calltoactionurl="http://plus.google.com/pages/create"
+  data-calltoactiondeeplinkid="/pages/create"&gt;
+  Share!
+&lt;/button&gt;</pre>
     </article>
   </slide>
 
