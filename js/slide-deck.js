@@ -331,7 +331,7 @@ SlideDeck.prototype.loadConfig_ = function(config) {
     var dataConfigContact = document.querySelector('[data-config-contact]');
 
     var html = [];
-    if (presenters.length == 1) {
+    if (presenters.length == 1 || presenters.length == 2) {
       var p = presenters[0];
 
       html = [p.name, p.company].join('<br>');

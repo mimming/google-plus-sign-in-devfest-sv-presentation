@@ -1,7 +1,7 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Introducing Google+ Sign-In',
+    title: 'Google+ Sign-In',
     subtitle: 'See what is possible in your App with the Google+ social layer',
     //eventTitle: 'Google I/O 2013',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
@@ -19,18 +19,17 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Jonathan Beri',
-    company: 'Developer Advocate, Google+',
+    name: 'Jenny Murphy',
+    company: 'Senior Developer Programs Engineer',
     gplus: 'http://plus.google.com/+GooglePlusDevelopers',
     www: 'http://developers.google.com/+',
     github: 'http://github.com/googleplus'
-  }/*, {
-    name: 'Second Name',
-    company: 'Job Title, Google',
-    gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
-  }*/]
+  }, {
+    name: 'Joanna Smith',
+    company: 'Developer Programs Engineer',
+    gplus: 'http://plus.google.com/+GooglePlusDevelopers',
+    www: 'http://developers.google.com/+',
+    github: 'http://github.com/googleplus'
+  }]
 };
 

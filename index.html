@@ -44,19 +44,43 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
+      <h2>Your Presenters</h2>
+    </hgroup>
+    <article class="flexbox">
+      <div style="width: 50%; text-align: center;">
+        <img style="width: 85%;" src="images/mimming_headshot.jpg"><br/><br/>
+        Jenny Murphy<br/>
+        Senior DPE<br/>
+      </div>
+      <div style="width: 50%; text-align: center;">
+        <img style="width: 85%;"  src="images/joanna_headshot.jpg"><br/><br/>
+        Joanna Smith<br/>
+        DPE<br/>
+      </div>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
       <h2>Today's Agenda</h2>
     </hgroup>
     <article>
-      <ul class="build">
+      <ul>
+        <li>A story about TuneIn</li>
         <li>Google+ Sign-In button</li>
         <li>Over-the-Air Installs</li>
         <li>App Customization</li>
         <li>Interactive Posts</li>
-        <li>App Activities</li>
-        <li>Server-Side calls</li>
-        <li>Platform Insights</li>
+        <li>Resources</li>
       </ul>
     </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>A story about TuneIn</h2>
+      <h3>Also known as a demo</h3>
+    </hgroup>
   </slide>
 
   <slide class="segue dark nobackground">
@@ -65,6 +89,38 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Google+ Sign-In button</h2>
       <h3>Simplified sign-in from a trusted source</h3>
     </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Google+ Sign-In button</h2>
+      <h3>The Button</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Google+ Sign-In button</h2>
+      <h3>The Consent Dialogue</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
+      <img src="images/consent.png" height="496" alt="The Consent Dialogue" title="The Consent Dialogue">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Google+ Sign-In button</h2>
+      <h3>Configure Application in the API Console</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/console2.png" width="960" alt="The API console" title="The API console">
+      <footer class="source">http://developers.google.com/console</footer>
+    </article>
   </slide>
 
   <slide>
@@ -80,32 +136,10 @@ URL: https://code.google.com/p/io-2012-slides
     data-callback="signinCallback"
     data-clientid="CLIENT_ID"
     data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schemas.google.com/AddActivity"
     data-scope="https://www.googleapis.com/auth/plus.login">
   &lt;/span>
 &lt;/span>
 </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Google+ Sign-In button</h2>
-      <h3>http://developers.google.com/+</h3>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/devsite.png" height="400" alt="Devsite" title="Devsite">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Google+ Sign-In button</h2>
-      <h3>Configure Application in the API Console</h3>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/console2.png" width="960" alt="The API console" title="The API console">
-      <footer class="source">http://developers.google.com/console</footer>
     </article>
   </slide>
 
@@ -126,16 +160,6 @@ URL: https://code.google.com/p/io-2012-slides
   })();
 &lt;/script&gt;
       </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Google+ Sign-In button</h2>
-      <h3>The Consent Dialogue</h3>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/consent.png" height="496" alt="The Consent Dialogue" title="The Consent Dialogue">
     </article>
   </slide>
 
@@ -185,9 +209,8 @@ function signinCallback(authResult) {
     class="g-signin"
     data-callback="signinCallback"
     data-clientid="CLIENT_ID"
-    <b>data-apppackagename="com.google.android.apps.plus"</b>
+    <b>data-apppackagename="com.example.android.your.package"</b>
     data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schemas.google.com/AddActivity"
     data-scope="https://www.googleapis.com/auth/plus.login">
   &lt;/span>
 &lt;/span>
@@ -208,6 +231,7 @@ function signinCallback(authResult) {
       <h2>Create accurate profiles</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
       <img src="images/fitbit-profile.png" alt="" height="496">
     </article>
   </slide>
@@ -217,6 +241,7 @@ function signinCallback(authResult) {
       <h2>Spark discovery</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
       <img src="images/beauty-friends.png" alt="" height="496">
     </article>
   </slide>
@@ -271,6 +296,7 @@ friends.execute(function(resp) {
       <h2>Let users invite friends</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
       <img src="images/beauty-ip.png" alt="">
     </article>
   </slide>
@@ -280,6 +306,7 @@ friends.execute(function(resp) {
       <h2>Target your call-to-action</h2>
     </hgroup>
     <article class="smaller">
+      TODO: Joanna TuneIn screen grabs
       <div class="columns-2">
         <img src="images/flixster-ip.png" alt="" height="530">
         <ul class="green" style="">
@@ -309,6 +336,7 @@ friends.execute(function(resp) {
       <h2>Deep link to a custom experience</h2>
     </hgroup>
     <article class="flexbox vcenter">
+      TODO: Joanna TuneIn screen grabs
       <img src="images/interactive-posts-anatomy.png" alt="" width="980">
     </article>
   </slide>
@@ -324,11 +352,9 @@ friends.execute(function(resp) {
   data-callback="signinCallback"
   data-clientid="YOUR_CLIENT_ID"
   data-cookiepolicy="single_host_origin"
-  data-requestvisibleactions=
-    "http://schemas.google.com/DiscoverActivity"
-  <b>data-calltoactionlabel="CREATE"
-  data-calltoactionurl="http://plus.google.com/pages/create"
-  data-calltoactiondeeplinkid="/pages/create"</b>&gt;
+  <b>data-calltoactionlabel="LISTEN"
+  data-calltoactionurl="http://tunes.example.com/listen/rick-roll"
+  data-calltoactiondeeplinkid="/listen/rick-roll"</b>&gt;
   Share!
 &lt;/button&gt;</pre>
     </article>
@@ -345,13 +371,11 @@ friends.execute(function(resp) {
   data-callback="signinCallback"
   data-clientid="YOUR_CLIENT_ID"
   data-cookiepolicy="single_host_origin"
-  data-requestvisibleactions=
-    "http://schemas.google.com/DiscoverActivity"
   <b>data-prefilltext="Create a Google+ page for your business."
   data-recipients="110967630299632321627,leeroy.jenkins@example.com"</b>
-  data-calltoactionlabel="CREATE"
-  data-calltoactionurl="http://plus.google.com/pages/create"
-  data-calltoactiondeeplinkid="/pages/create"&gt;
+  data-calltoactionlabel="LISTEN"
+  data-calltoactionurl="http://tunes.example.com/listen/rick-roll"
+  data-calltoactiondeeplinkid="/listen/rick-roll"&gt;
   Share!
 &lt;/button&gt;</pre>
     </article>
@@ -360,48 +384,9 @@ friends.execute(function(resp) {
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>App Activities</h2>
-      <h3>Re-engage users when it's relevant</h3>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Be found on users' Google+ profile </h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/tunein-activity.png" alt="" height="496">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>App Activities</h2>
-      <h3>A Review Activity</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="javascript">
-var moment = {};
-moment.type = 'http://schemas.google.com/ReviewActivity';
-moment.target = { 'url': 'https://example.com/thing' };
-moment.result = { 'url': 'https://example.com/thing/review' };
-var request = gapi.client.request({
-  'path': 'plus/v1/people/me/moments/vault',
-  'method': 'POST',
-  'body': JSON.stringify(moment)
-});
-request.execute(function(result) {
-  console.log(result);
-})    
-      </pre>
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
       <h2>Server-Side calls</h2>
       <h3>Make offline requests using your stack</h3>
+      TODO: Do we want to include this?
     </hgroup>
   </slide>
 
@@ -562,29 +547,12 @@ $.ajax({
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Platform Insights</h2>
-      <h3>Meaningful analytics to optimize your integration</h3>
-    </hgroup>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Platform Insights</h2>
-      <h3>Connect Google+ Page</h3>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/approve.png" height="496" alt="Connected page" title="Connected page">
-    </article>
-  </slide>
-
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Questions</h2>
-      <h3>Then a break!</h3>
+      <h3></h3>
+      TODO: Joanna - consider forking off a 'how to find us' resources slide, or just use this
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
