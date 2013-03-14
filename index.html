@@ -94,10 +94,10 @@ URL: https://code.google.com/p/io-2012-slides
   <slide>
     <hgroup>
       <h2>Google+ Sign-In button</h2>
-      <h3>The Button</h3>
+      <h3>The Button - In the Wild</h3>
     </hgroup>
-    <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
+    <article class="flexbox vcenter" style="margin-top: 0;">
+      <img src="images/screenshots/button_full.png" style="max-height: 100%;">
     </article>
   </slide>
 
@@ -106,9 +106,10 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Google+ Sign-In button</h2>
       <h3>The Consent Dialogue</h3>
     </hgroup>
-    <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
-      <img src="images/consent.png" height="496" alt="The Consent Dialogue" title="The Consent Dialogue">
+    <article class="flexbox vcenter" style="margin-top: 0;">
+      <img src="images/screenshots/consent_dialog.png" style="max-height: 100%;">
+      <img src="images/screenshots/consent_dialog_confirm.png" style="max-height: 100%;">
+
     </article>
   </slide>
 
@@ -117,8 +118,8 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Google+ Sign-In button</h2>
       <h3>Configure Application in the API Console</h3>
     </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/console2.png" width="960" alt="The API console" title="The API console">
+    <article class="flexbox vcenter" style="margin-top: 0;">
+      <img src="images/console2.png" width="960" alt="The API console" title="The API console" style="margin-top: -30px;">
       <footer class="source">http://developers.google.com/console</footer>
     </article>
   </slide>
@@ -231,18 +232,7 @@ function signinCallback(authResult) {
       <h2>Create accurate profiles</h2>
     </hgroup>
     <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
-      <img src="images/fitbit-profile.png" alt="" height="496">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Spark discovery</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
-      <img src="images/beauty-friends.png" alt="" height="496">
+      <img src="images/screenshots/tunein_profile.png" alt="" style="max-height: 100%;">
     </article>
   </slide>
 
@@ -296,8 +286,7 @@ friends.execute(function(resp) {
       <h2>Let users invite friends</h2>
     </hgroup>
     <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
-      <img src="images/beauty-ip.png" alt="">
+      <img src="images/screenshots/ip.png" alt="">
     </article>
   </slide>
 
@@ -305,11 +294,12 @@ friends.execute(function(resp) {
     <hgroup>
       <h2>Target your call-to-action</h2>
     </hgroup>
-    <article class="smaller">
-      TODO: Joanna TuneIn screen grabs
-      <div class="columns-2">
-        <img src="images/flixster-ip.png" alt="" height="530">
-        <ul class="green" style="">
+    <article class="flexbox" style="margin-left: 70px;">
+      <div class="flexbox">
+        <img src="images/screenshots/ip_dialog_custom.png" alt="" style="border: 1px solid gray">
+        </div>
+      <div class="flexbox">
+        <ul class="green" style="font-size: 21px; margin-left: 75px;">
           <li>&hellip;</li>
           <li>ANSWER_QUIZ</li>
           <li>APPLY</li>
@@ -322,22 +312,10 @@ friends.execute(function(resp) {
           <li>CAPTURE</li>
           <li>CHALLENGE</li>
           <li>COLLECT</li>
-          <li>COMMENT</li>
-          <li>COMPARE</li>
           <li>CONFIRM</li>
           <li>&hellip;</li>
         </ul>
       </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Deep link to a custom experience</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      TODO: Joanna TuneIn screen grabs
-      <img src="images/interactive-posts-anatomy.png" alt="" width="980">
     </article>
   </slide>
 
@@ -381,178 +359,22 @@ friends.execute(function(resp) {
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Server-Side calls</h2>
-      <h3>Make offline requests using your stack</h3>
-      TODO: Do we want to include this?
-    </hgroup>
-  </slide>
-
   <slide>
     <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>Request Offline Access</h3>
+      <h2>Resources</h2>
+      <h3></h3>
     </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="html">
-&lt;span
-  class="g-signin"
-  data-callback="signinCallback"
-  data-clientid="YOUR_CLIENT_ID"
-  data-cookiepolicy="single_host_origin"
-  data-requestvisibleactions=
-    "http://schemas.google.com/DiscoverActivity"
-  data-scope="https://www.googleapis.com/auth/plus.login"
-  <b>data-accesstype="offline"</b>&gt;
-&lt;/span&gt;        
-      </pre>
-    </article>
-  </slide>
-    
-  <slide>
-    <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>Send code to server</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="javascript">
-$.ajax({
-  type: 'POST',
-  url: window.location.href + '/connect?state=state&amp;gplus_id=' +
-      profile.id,
-  contentType: 'application/octet-stream; charset=utf-8',
-  success: function(result) {
-    console.log(result);
-  },
-  processData: false,
-  data: <b>authResult.code</b>
-});        
-      </pre>
+    <article class="flexbox">
+      STUFFFFF1  TODO: Joanna
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>Token Exchange</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-$code = $request->getContent();
-// Exchange the OAuth 2.0 authorization code for user credentials.
-<b>$client->authenticate($code);</b>
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>Get Token Info</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-$token = json_decode($client->getAccessToken());
-$reqUrl = 
-  <b>'https://www.googleapis.com/oauth2/v1/tokeninfo?access_token='</b>
-  . $token->access_token;
-$req = new Google_HttpRequest($reqUrl);
-
-$tokenInfo = json_decode(
-    $client::getIo()->authenticatedRequest($req)
-        ->getResponseBody());
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>Validate Token</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-// If there was an error in the token info, abort.
-if ($tokenInfo->error) {
-  return new Response($tokenInfo->error, 401);
-}
-// Make sure the token we got is for the intended user.
-if ($tokenInfo->userid != $request->get['gplus_id']) {
-  return new Response(
-      'Token\'s user ID doesn\'t match given user ID', 401);
-}
-// Make sure the token we got is for our app.
-if ($tokenInfo->audience != CLIENT_ID) {
-  return new Response(
-      'Token\'s client ID does not match app\'s.', 401);
-}        
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Server-Side calls</h2>
-      <h3>App Activities, Server-Side</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="php">
-$moment_body = new Google_Moment();
-$moment_body->setType("http://schemas.google.com/ReviewActivity");
-$item = new Google_ItemScope();
-$item->setUrl("http://example.com/thing");
-$moment_body->setTarget($item);
-$review = new Google_ItemScope();
-$review->setUrl("http://example.com/thing/review");
-$moment_body->setResult($review);
-$momentResult = <b>$plus->moments->insert(
-  'me', 'vault', $moment_body);</b>        
-      </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Server-Side Calls</h2>
-      <h3>Users may disconnect</h3>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/apps.png" width="960" alt="The apps page" title="The apps page">
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Server-Side Calls</h2>
-      <h3>Disconnect programmatically</h3>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="javascript">
-$.ajax({
-  type: 'GET',
-  url: '<b>https://accounts.google.com/o/oauth2/revoke?token=</b>' +
-      gapi.auth.getToken().access_token,
-  contentType: 'application/json',
-  dataType: 'jsonp',
-  success: function(result) {
-    console.log('revoke response: ' + result);
-  },
-  error: function(e) {
-    console.log(e);
-  }
-});
-  </pre>
-    </article>
-  </slide>
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Questions</h2>
       <h3></h3>
-      TODO: Joanna - consider forking off a 'how to find us' resources slide, or just use this
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
